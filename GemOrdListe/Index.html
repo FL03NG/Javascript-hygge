@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Say Hello</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="word" placeholder="Type a word">
+        <button @click="saveWord()">Save</button>
+        <button @click="showWord()">Show</button>
+        <button @click="clearAll()">Clear</button>
+        <div>
+            {{ message }}
+        </div>
+        <ul v-if="showList && savedWords.length">
+            <li v-for="(w, index) in savedWords" :key="index">{{ w }}</li>
+        </ul>
+    </div>
+    <!-- Index.js actually lives one level up, so adjust the path -->
+    <script src="Index.js"></script>
+
+</body>
+
+</html>
